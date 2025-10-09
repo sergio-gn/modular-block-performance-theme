@@ -9,7 +9,7 @@ $faq = get_sub_field('faq_text');
         <div class="accordion v1">
             <?php 
             $accordion_count = 0;
-            <?php if (have_rows('repeater_faq')): ?>
+            if (have_rows('repeater_faq')): ?>
                 <?php while (have_rows('repeater_faq')): the_row(); ?>
                     <div class="a-container">
                         <p class="a-btn"><?php the_sub_field('question'); ?><span></span></p>
