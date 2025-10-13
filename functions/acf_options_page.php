@@ -1,22 +1,24 @@
 <?php // Creates the Theme General Settings page
-if ( function_exists('acf_add_options_page') ) {
-    // Add a top-level menu page
-    acf_add_options_page(array(
-        'page_title'    => 'Theme General Settings',
-        'menu_title'    => 'Theme Settings',
-        'menu_slug'     => 'theme-general-settings',
-        'capability'    => 'edit_posts',
-        'redirect'      => false
-    ));
-
-    // Add a subpage under the top-level menu page
-    acf_add_options_sub_page(array(
-        'page_title'    => 'Locations',
-        'menu_title'    => 'Locations',
-        'parent_slug'   => 'theme-general-settings',
-        'capability'    => 'edit_posts'
-    ));
-}
+add_action('init', function() {
+    if ( function_exists('acf_add_options_page') ) {
+        // Add a top-level menu page
+        acf_add_options_page(array(
+            'page_title'    => 'Theme General Settings',
+            'menu_title'    => 'Theme Settings',
+            'menu_slug'     => 'theme-general-settings',
+            'capability'    => 'edit_posts',
+            'redirect'      => false
+        ));
+    
+        // Add a subpage under the top-level menu page
+        acf_add_options_sub_page(array(
+            'page_title'    => 'Locations',
+            'menu_title'    => 'Locations',
+            'parent_slug'   => 'theme-general-settings',
+            'capability'    => 'edit_posts'
+        ));
+    }
+});
 
 function enqueue_block_styles() {
     if (is_singular()) {
