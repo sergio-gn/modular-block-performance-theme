@@ -11,7 +11,7 @@ get_template_part( 'parts/navigation' );
                 <article class="main-article">
                     <?php 
                         // Dynamically get block layouts from the 'blocks' directory
-                        $block_directory = get_template_directory() . '/blocks';
+                        $block_directory = get_stylesheet_directory() . '/blocks';
                         $block_files = glob($block_directory . '/*.php');
 
                         $block_layouts = array_map(function($file) {
